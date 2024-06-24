@@ -1,0 +1,17 @@
+//Dynamic Adaptive Card Formula
+{
+  type: "AdaptiveCard",
+  version: "1.5",
+  '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+  body: [
+    {
+      type: "FactSet",
+      facts: ForAll(Sort(Topic.ComputerTable, Category),
+      {
+         title: ThisRecord.Category,
+         value: ThisRecord.ProductName & " Quantity: " & ThisRecord.Quantity
+      }     
+      )  
+    }
+  ]
+}
